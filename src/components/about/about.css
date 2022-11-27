@@ -33,7 +33,7 @@
     transition: var(--transition);
 
 }
-/* when we hover on the image */
+/*  hover on the image */
 .about__myimage-img:hover {
     transform: rotate(0);
 }
