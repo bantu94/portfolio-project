@@ -1,0 +1,2312 @@
+building and deploying portfolio webapp with react 
+
+1). Create the app with this command
+npx create-react-app 'app-name'
+
+
+2).cd 'app.name' (in this app its portfolio)
+    ..cd portfolio
+
+
+3).locate the 'src' & 'public' folders and delete files in the folders to start from scratch.
+
+
+
+4).the app to be rendered in the public folder>>
+  ...Create a html file
+      /public/index.html and then add code to it
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ssekiranda Edward | Portfolio</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+
+
+
+5).creata a folder in the src directory where images will be stored and rendered from
+  .../src/assets >> and add images of your preference.
+
+
+6).create a js and css files called index and as wel the App in the src folder
+    ...../src/index.js > and then add this code to the file.
+    ...../src/index.css > where resides the stylings for index.js
+    ...../src/App.jsx > where resides the App
+
+
+
+7).After the App app is created it should be imported into the index.js file
+
+
+8) open the /src/index.js and add this code to it...
+
+import ReactDOM  from "react-dom";
+
+import App from "./App";
+
+import './index.css'
+
+ReactDOM.render(<App/>, document.getElementById('root')) // this line connects the App to the public
+ interface by telling ReactDom to render all documents to render document to the root id 
+
+
+
+
+9) open the /src/App.jsx and add this code to it...
+
+import React from 'react'
+
+const App = () => {
+  return (
+    <h1>App</h1>
+  )
+}
+
+
+
+export default App
+
+NOW YOU CAN RUN npm start TO TEST THE APP
+
+
+
+10) We as wel need to test css
+
+open the /src/index.css and add this code to it..
+
+
+body {
+    background: black; // for the background color
+    color: aliceblue; // for the text color
+}
+
+
+11).components to make the application simple and readable >> so we should create a components folder in the src DIR
+    ...../src/components >> and each component is going to be a folder. 
+   so in the components folder create [header, footer,  about, contacts, experience, testimonials, nav, services, portfolio] folders.
+
+   then create a jsx and css file for each folder E.g header/Header.jsx >-header.css
+
+
+
+12).open the /header/Header.jsx file and add the following code to it>> 
+First install the extension Es7+  then back to About.jsx file ..type rafce and press Enter
+
+
+import React from 'react';
+
+import './header.css';
+
+const Header = () => {
+  return (
+    <div>Header</div>
+  )
+}
+
+export default Header
+
+
+open the /footer/Footer.jsx file and add the following code to it>> 
+
+import React from 'react'
+
+const Footer = () => {
+  return (
+    <div>Footer</div>
+  )
+}
+
+export default Footer
+
+
+
+
+open the /about/About.jsx file and add the following code to it>> 
+
+import React from 'react';
+
+import './about.css'; to import css for about page
+
+
+const About = () => {
+  return (
+    <div>About</div>
+  )
+}
+
+export default About
+
+
+
+
+open the /contact/Contact.jsx file and add the following code to it>>
+
+import React from 'react'
+
+import './contact.css';
+
+const Contact = () => {
+  return (
+    <div>Contact</div>
+  )
+}
+
+export default Contact
+
+
+
+
+open the /testimonials/Testimonials.jsx file and add the following code to it>>
+import React from 'react'
+
+import './testimonials.css';
+
+const Testimonials = () => {
+  return (
+    <div>Testimonials</div>
+  )
+}
+
+export default Testimonials
+
+
+open the /experience/Experience.jsx file and add the following code to it>>
+
+import React from 'react';
+
+import './experience.css';
+
+const Experience = () => {
+  return (
+    <div>Experience</div>
+  )
+}
+
+export default Experience
+
+
+open the /nav/Nav.jsx file and add the following code to it>>
+
+
+import React from 'react'
+
+import './nav.css';
+
+const Nav = () => {
+  return (
+    <div>Nav</div>
+  )
+}
+
+export default Nav
+
+
+
+
+
+
+open the /portfolio/Portfolio.jsx file and add the following code to it>>
+
+import React from 'react';
+
+
+import './portfolio.css';
+
+const Portfolio = () => {
+  return (
+    <div>Portfolio</div>
+  )
+}
+
+export default Portfolio
+
+
+
+
+open the /services/Services.jsx file and add the following code to it>>
+
+import React from 'react';
+
+import './services.css';
+
+const Services = () => {
+  return (
+    <div>Services</div>
+  )
+}
+
+export default Services
+
+
+13).We need to import our components into the App.js file .. so open the /src/App.js and make it look like the following
+
+import React from 'react'
+
+
+// importing components 
+import Header from './components/header/Header';
+import Nav from './components/nav/Nav';
+import About from './components/about/About';
+import Experience from './components/experience/Experience';
+import Portfolio from './components/portfolio/Portfolio';
+import Services from './components/services/Services';
+import Testimonials from './components/testimonials/Testimonials';
+import Contact from './components/contact/Contact';
+import Footer from './components/footer/Footer';
+
+const App = () => {
+  return (
+    <>.........................react fragment
+    <Header />
+    <Nav />
+    <About />
+    <Experience />
+    <Portfolio />
+    <Services />
+    <Testimonials />
+    <Contact />
+    <Footer />
+    </>
+  )
+}
+
+export default App
+
+when you run npm start ,everything should be running properly and you should see this in your browser.
+
+14).Now its its time to set some styling that will apply to our application 
+  and this should be done in the global css file which is /src/index.css so open it and make it 
+  look like the following.
+
+/* import google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* css variable for the application */
+:root {
+    --color-bg: #1f1f38;
+    --color-bg-variant: #2c2c6c;
+    --color-primary: #4db5ff;
+    --color-primary-variant: rgba(77, 181, 255, 0.4);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.6);
+
+    --transition: all 400ms ease;
+
+
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+
+}
+/* to smoothly scroll in our application */
+html {
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+}
+
+/* i dont need a scrollbar in this app */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* body stylings */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-white);
+    line-height: 1.7;
+    background-image: url(../src/assets/bgtxt.jpg);
+}
+
+/* ##########  GENERAL STYLES  ###########  */
+.container {
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+section {
+    margin-top: 8rem;
+}
+
+section > h2, 
+section > h5 {
+    text-align: center;
+    color: var(--color-light)
+}
+
+section > h2 {
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+}
+
+.text-light {
+    color: var(--color-light);
+}
+
+a {
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--color-white  );
+}
+
+.btn {
+    width: max-content;
+    display: inline-block;
+    color: var(--color-primary);
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary);
+    transform: var(--transition);
+}
+
+.btn:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent;
+}
+
+.btn-primary {
+    background: var(--color-primary );
+    color: var(--color-bg);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Responsiveness */
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+
+    .container {
+        width: var(--container-width-md);
+    }
+
+    section {
+        margin-top: 6rem;
+    }
+    
+}
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+
+    .container {
+        width: var(--container-width-sm);
+    }
+
+    section {
+        margin-bottom: 2rem;
+    }
+    
+}
+
+14).Working on our components starting with from top subsquently.
+
+Create another CTA.jsx file in the header folder which will be explained soon
+Open /header/CTA.jsx file and add this code to it.
+
+import React from 'react';
+import CV from '../../assets/cv.pdf';
+
+const CTA = () => {
+  return (
+    <div className='cta'>
+        <a href={CV} download className='btn'>Download CV</a>
+        <a href='#contact' className='btn btn-primary'>Let's Talk</a>
+    </div>
+  )
+}
+
+export default CTA
+
+
+
+Now open the /header/Header.jsx add code to it.
+
+import React from 'react';
+
+
+import './header.css';
+import CTA from './CTA';
+import myImage from '../../assets/myimage.jpg'
+
+const Header = () => {
+  return (
+    <header>
+      <div className='container header__container'>
+        <h5>Hello I am</h5>
+        <h1>Ssekiranda Edward</h1>
+        <h5 className='text-light'>MERN Stack Developer</h5>
+        <CTA />
+        <div className='my-image'>
+          <img src={myImage} alt="myimage" />
+        </div>
+        
+      </div>
+
+    </header>
+  )
+}
+
+export default Header
+
+
+This Header will also have a social media section component. so create a /SocialMedia.jsx file
+
+
+open the /SocialMedia.jsx file and add the following code to it.
+
+but before add the code..
+
+
+
+
+For this will want to use icons so go to https://react-icons.github.io/react-icons/
+
+npm install react-icons --save issue this command in your terminal to install react icons
+
+then search for your preffered icon in this example linkedin, instagram and Facebook.
+
+select your icon and click on it to be copied. and then import it into the file
+
+
+import React from 'react'
+
+import { FaLinkedin } from 'react-icons/fa';
+import { BsInstagram } from 'react-icons/bs';
+import { MdFacebook } from 'react-icons/md';
+
+const SocialMedia = () => {
+  return (
+    <div className='header__social'>
+      <a href='https://linkedin.com' target={'blank'}><FaLinkedin /></a>
+      <a href='https://instagram.com' target={'blank'}><BsInstagram /></a>
+      <a href='https://facebook.com' target={'blank'}><MdFacebook /></a>
+    </div>
+  )
+}
+
+export default SocialMedia
+
+For this file to appear on our app.we need to import it into the Header.jsx file.
+
+
+
+
+Open the /header/Header.jsx file to make it look like this.we will also add a scroll down section to....
+
+
+
+
+import React from 'react';
+
+
+import './header.css';
+import CTA from './CTA';
+import myImage from '../../assets/myimage.png';
+import SocialMedia from './SocialMedia';
+
+const Header = () => {
+  return (
+    <header>
+      <div className='container header__container'>
+        <h5>Hello I am</h5>
+        <h1>Ssekiranda Edward</h1>
+        <h5 className='text-light'>MERN Stack Developer</h5>
+        <CTA />
+        <SocialMedia />
+
+        <div className='my-image'>
+          <img src={myImage} alt="myimage" />
+        </div>
+
+        <a href='#contact' className='scroll__down'>Scroll Down</a>
+
+      </div>
+
+    </header>
+  )
+}
+
+export default Header
+
+
+
+Now its to add some stylings for our Header.jsx . so open the header.css and add the following code
+
+/header/header.css 
+
+
+header {
+    height: 158vh;
+    padding-top: 7rem;
+    overflow: hidden;
+}
+
+.header__container {
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+
+/* ****************CALL TO ACTION ****************** */
+.cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* ****************social media ****************** */
+
+.header__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+}
+
+.header__social::after {
+    content: '';
+    width: 1px;
+    height: 2rem;
+    background: var(--color-primary);
+}
+
+/* **************** myimage ****************** */
+.my-image {
+    background: linear-gradient(var(--color-primary), transparent);
+    width: 22rem;
+    height: 33rem;
+    position: absolute;
+    margin-top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 2rem 1.5rem 1.5rem 3rem;
+}
+
+
+/* **************** SCROLL DOWN ****************** */
+.scroll__down {
+    position: absolute;
+    right: -2.2rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 1rem;
+
+}
+
+/* RESPONSIVENESS */
+/* *****************Medium Devices **************************** */
+@media screen and (max-width:1024px) {
+    header {
+        height: 126vh;
+    }   
+   
+}
+/* *****************small Devices **************************** */
+@media screen and (max-width:600px) {
+    header {
+        height: 158vh;
+    } 
+    .header__social,
+    .scroll__down {
+        display: none;
+    }
+    
+}
+
+
+Now we should start working on our Navigation Bar in the nav component
+ 
+Open The Nav.jsx file and add the following code to it
+
+
+
+First go to the https://react-icons.github.io/react-icons and search for your preffered icons that matches
+
+with the components About, Experience, Portfolio, Services, Contact and Testimonials.
+
+
+click on your selected icon to be copied and import it in Nav.jsx file..it now should look like this
+
+
+import React from 'react';
+
+import { ImHome } from 'react-icons/im';
+import { CgProfile } from 'react-icons/cg';
+import { GiSkills } from 'react-icons/gi';
+import { RiServiceFill } from 'react-icons/ri';
+import { MdOutlineContactPhone } from 'react-icons/md';
+
+import './nav.css';
+ 
+const Nav = () => {
+  return (
+    <nav>
+      <a href='#' className='active'><ImHome /></a>
+      <a href='#about'><CgProfile /></a>
+      <a href='#experience'><GiSkills /></a>
+      <a href='#services'><RiServiceFill /></a>
+      <a href='#contact'><MdOutlineContactPhone /></a>
+    </nav>
+  )
+}
+
+export default Nav
+
+
+
+
+now we need to assign our nav links to their designated components sections. 
+
+About, Experience, Portfolio, Services, Contact and Testimonials so start with the about..
+
+
+
+open the /about/About.jsx file and make it look like this.
+
+import React from 'react';
+
+import './about.css';
+
+
+const About = () => {
+  return (
+    <section id='about'>About</section>
+  )
+}
+
+export default About
+
+
+If you done everything correctly, when you click on the about icon it should take you to the About page
+
+
+
+open the /experience/Experience.jsx file and make it look like this.
+
+import React from 'react';
+
+import './experience.css';
+
+
+const About = () => {
+  return (
+    <section id='experience'>Experience</section>
+  )
+}
+
+export default experience
+
+
+If you done everything correctly, when you click on the about icon it should take you to the experience page
+
+
+
+
+
+open the /portfolio/Portfolio.jsx file and make it look like this.
+
+import React from 'react';
+
+import './portfolio.css';
+
+
+const About = () => {
+  return (
+    <section id='portfolio'>Portfolio</section>
+  )
+}
+
+export default portfolio
+
+
+If you done everything correctly, when you click on the about icon it should take you to the Portfolio page
+
+
+
+
+
+open the /services/Services.jsx file and make it look like this.
+
+import React from 'react';
+
+import './services.css';
+
+
+const About = () => {
+  return (
+    <section id='services'>Services</section>
+  )
+}
+
+export default services
+
+
+If you done everything correctly, when you click on the about icon it should take you to the Services page
+
+
+
+
+open the /contact/Contact.jsx file and make it look like this.
+
+import React from 'react';
+
+import './contact.css';
+
+
+const About = () => {
+  return (
+    <section id='contact'>Contact</section>
+  )
+}
+
+export default contact
+
+
+If you done everything correctly, when you click on the about icon it should take you to the Contact page
+
+
+
+open the /testimonials/Testimonials.jsx file and make it look like this.
+
+import React from 'react'
+
+import './testimonials.css';
+
+const Testimonials = () => {
+  return (
+    <section id='testimonials'>Testimonials</section>
+  )
+}
+
+export default Testimonials
+
+Note that some components have not been given icons
+
+
+
+
+
+When we click on an icon to take us to its page, it should show to us that its active,means we now must add
+ 
+this functionality by using 'useState'. so open up the Nav.jsx file and modify it to look like this
+
+/nav/Nav.jsx
+
+
+import React from 'react';
+
+import { ImHome } from 'react-icons/im';
+import { CgProfile } from 'react-icons/cg';
+import { FaReact } from 'react-icons/fa';
+import { RiServiceFill } from 'react-icons/ri';
+import { MdOutlineContactPhone } from 'react-icons/md';
+import { useState } from 'react';
+
+import './nav.css';
+ 
+const Nav = () => {
+  const [activeNav, setActiveNav] = useState('#')
+  return (
+    <nav>
+      <a href='/#' onClick={() => setActiveNav('/#')} className={activeNav === '/#' ? 'active' : ''}><ImHome /></a>
+      <a href='#about' onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}><CgProfile /></a>
+      <a href='#experience'  onClick={() => setActiveNav('#experience')} className={activeNav === '#experience' ? 'active' : ''}><FaReact /></a>
+      <a href='#services'  onClick={() => setActiveNav('#services')} className={activeNav === '#services' ? 'active' : ''}><RiServiceFill /></a>
+      <a href='#contact'  onClick={() => setActiveNav('#contact')} className={activeNav === '#contact' ? 'active' : ''}><MdOutlineContactPhone /></a>
+    </nav>
+  )
+}
+
+export default Nav
+
+
+
+<a href='/#' onClick={() => setActiveNav('/#')} className={activeNav === '/#' ? 'active' : ''}><ImHome /></a>
+
+this line commands icon to show its active onClick and when not  onClick its set back to default.
+
+The default active is set on home page
+
+
+
+
+
+Now its time to work on the about page. So open the /about/About.jsx and add the following code to it
+
+by now you should be familia with using react icons.we will use icons in this component. 
+
+so follow what you-ve learnt so far and import them
+
+in the  /about/About.jsx file
+
+
+import React from 'react';
+import aboutmyimg from '../../assets/aboutmyimg.jpg';
+
+import { FaReact } from 'react-icons/fa';
+import { IoIosPeople} from 'react-icons/io';
+import { FaRProject } from 'react-icons/fa';
+
+
+import './about.css';
+
+
+const About = () => {
+  return (
+    <section id='about'>
+      <h5>We need to</h5>
+      <h2>Connect</h2>
+
+      <div className="container about__container">
+        <div className="about__my-image">
+          <div className="about__my-image-img">
+            <img src={aboutmyimg} alt="About-Img" />
+
+          </div>
+
+        </div>
+        <div className="about__content">
+          <div className="about__cards">
+            <article className='abt__card'>
+              <FaReact className='about__icon' />
+              <h5>Experience</h5>
+              <small>1 Years Working</small>
+            </article>
+            <article className='abt__card'>
+              <FaRProject className='about__icon' />
+              <h5>Projects</h5>
+              <small>30+ Completed</small>
+            </article>
+            <article className='abt__card'>
+              <IoIosPeople className='about__icon' />
+              <h5>Clients</h5>
+              <small>100+ Worldwide</small>
+            </article>
+          </div>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est placeat dolorem reprehenderit provident expedita, aperiam sapiente harum quos necessitatibus ab nihil unde quia amet atque corrupti? Reiciendis deleniti fugit natus veniam eius quos iste autem quas modi, animi atque nulla perspiciatis, quo molestias ad alias harum, tempore repellat iusto ratione?</p>
+
+          <a href='#contact' className='btn btn-primary'>Connect</a>
+
+        </div>
+      </div>
+
+    
+    </section>
+  )
+}
+
+export default About
+
+
+if everything is done correctly ,you should see your changes in the about section  in the browser
+
+
+Now we add some stylings to the about page..So open the /about/about.css file add this code
+
+
+.about__container {
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+}
+
+
+/* IMAGE DIV  ******************************/
+.about__myimage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    -webkit-aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        var(--color-primary),
+        transparent
+    );
+    display: grid;
+    place-items: center;
+}
+
+
+
+
+
+/*********** IMAGE  ******************************/
+.about__myimage-img {
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: var(--transition);
+
+}
+/* when we hover on the image */
+.about__myimage-img:hover {
+    transform: rotate(0);
+}
+
+/* Styles for the cards */
+.about__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+
+/* Styles per card */
+
+.abt__card {
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.abt__card h5 {
+    font-size: 1rem;
+}
+
+.abt__card small {
+    font-size: 0.8rem;
+    color: var(--color-light);
+}
+
+/* Styles per card on hover*/
+
+.abt__card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+
+/* icons in the card  */
+.about__icon {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+/* paragraph */
+.about__content p {
+    margin: 2rem 0 2.6rem;
+    color: var(--color-light);
+}
+
+/* Responsiveness */
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .about__myimage {
+        width: 50%;
+        margin: 2rem auto 4rem;
+    }
+
+    .about__content p {
+        margin: 1rem 0 1.5rem;
+    }
+}
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+    .about__myimage {
+        width: 65%;
+        margin: 0 auto 3rem;
+    }
+
+    .about__cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .about__content {
+        text-align: center;
+    }
+
+    .about__content p {
+        margin: 1.5rem 0;
+    }
+}
+
+At this  moment we ready to head to the next section component that is Experience..
+
+and By now you should be familia with using React icons .so
+
+open the /experience/Experience.jsx file add this code to it .
+
+import React from 'react';
+import { MdComputer } from 'react-icons/md';
+import { FaLaptopCode } from 'react-icons/fa';
+
+
+import './experience.css';
+
+const Experience = () => {
+  return (
+    <section id='experience'>
+      <h5>Check For My Skills</h5>
+      <h2>My Experience</h2>
+
+      <div className='container experience__container'>
+        {/* *************FRONTEND TECHS************** */}
+
+        <div className='experience__frontend'>
+          <h3>Frontend Technologies</h3>
+          <div className="experience__content">
+            <article className='experience__details'>
+              <MdComputer className='experience__details-icon' />
+              <div>
+                <h4>HTML</h4>
+                <small className='text-light'>Advanced</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <MdComputer className='experience__details-icon' />
+              <div>
+                <h4>CSS</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <MdComputer className='experience__details-icon' />
+              <div>
+                <h4>Javascript</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <MdComputer className='experience__details-icon' />
+              <div>
+                <h4>React</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <MdComputer className='experience__details-icon' />
+              <div>
+                <h4>Bootstrap</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <MdComputer className='experience__details-icon' />
+              <div>
+                <h4>NPM</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
+            </article>
+            
+           
+          </div>
+        </div>
+        {/* *************BACKEND TECHS****************/}
+        <div className='experience__backend'>
+          <h3>Backend Technologies</h3>
+          <div className="experience__content">
+            <article className='experience__details'>
+              <FaLaptopCode className='experience__details-icon' />
+              <div>
+                <h4>MongoDB</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <FaLaptopCode className='experience__details-icon' />
+              <div>
+                <h4>Node.js</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <FaLaptopCode className='experience__details-icon' />
+              <div>
+                <h4>Python</h4>
+                <small className='text-light'>Basic</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <FaLaptopCode className='experience__details-icon' />
+              <div>
+                <h4>Express</h4>
+                <small className='text-light'>Experienced</small>
+              </div>
+            </article>
+            <article className='experience__details'>
+              <FaLaptopCode className='experience__details-icon' />
+              <div>
+                <h4>Django</h4>
+                <small className='text-light'>Intermediate</small>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Experience
+
+
+now open /experience/experience.css to add this stylings...........
+
+
+.experience__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* .experience__container divs */
+.experience__container > div {
+    background: var(--color-bg-variant);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.experience__container > div:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+
+.experience__container > div h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.experience__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+}
+
+
+/* articles  */
+.experience__details {
+    display: flex;
+    gap: 1rem;
+}
+
+/* icons */
+.experience__details-icon {
+    margin-top: 6px;
+    color: var(--color-primary);
+}
+
+/* Responsiveness */
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+        .experience__container {
+            grid-template-columns: 1fr;
+        }
+
+        .experience__container > div {
+            width: 80%;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        .experience__content {
+            padding: 1rem;
+        }
+}
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+
+    .experience__container {
+        gap: 1rem;
+    }
+    
+    .experience__container > div {
+        width: 100;
+        padding: 2rem 1rem;
+    }
+    
+}
+
+
+
+
+Now we head to the services component section to edit it  OPen the /services/Services.jsx file add this code to it.
+
+
+import React from 'react';
+import { MdRadioButtonChecked } from 'react-icons/md';
+
+import './services.css';
+
+const Services = () => {
+  return (
+    <section id='services'>
+      <h5>Below I Offer</h5>
+      <h2>Services</h2>
+
+      <div className='container services__container'>
+        <article className='service'>
+          <div className='service__head'>
+            <h3>UI/UX Design</h3>
+          </div>
+
+          <ul className='service__list'>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur </p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+          </ul>
+        </article>
+        {/* *******ui/ux design ends ****************** */}
+        <article className='service'>
+          <div className='service__head'>
+            <h3>Web Development</h3>
+          </div>
+
+          <ul className='service__list'>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur </p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+          </ul>
+        </article>
+        {/* *******Web Dev ends ****************** */}
+        <article className='service'>
+          <div className='service__head'>
+            <h3>Content Creation</h3>
+          </div>
+
+          <ul className='service__list'>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur </p>
+            </li>
+            <li>
+              <MdRadioButtonChecked className='service__list-icon'/>
+              <p>Lorem ipsum, dolor sit amet consectetur .</p>
+            </li>
+          </ul>
+        </article>
+        {/* *******Content Creation ends ****************** */}
+
+      </div>
+    </section>
+  )
+}
+
+export default Services
+
+
+Now we should add some stylings to services section.OPen the /services/services.css and add this code to it.
+
+
+.services__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.service {
+    background: var(--color-bg-variant);
+    border-radius: 0 0 2rem 2rem;
+    border: 1px solid var(--color-primary);
+    height: auto;
+    /* height: fit-content; */
+    transition: var(--transition);
+}
+
+.service:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+
+.service__head {
+    background: var(--color-primary);
+    padding: 2rem;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.service__head h3 {
+    color: var(--color-bg);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.service__list {
+    padding: 2rem;
+}
+
+.service__list li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.service__list-icon {
+    color: var(--color-primary);
+    margin-top: 2px;
+}
+
+.service__list p {
+    font-size: 0.9rem;
+}
+
+/* Responsiveness */
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+    .services__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .service {
+        height: auto;
+    }
+    
+}
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+
+    .services__container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+}
+
+
+Lets work on the Portfolio component section ..So open the /portfolio/Portfolio.jsx and add this code..
+
+in Your /assets folder must be image of your prefference to use in this section
+
+import React from 'react';
+import image1 from '../../assets/port-image1.jpg';
+import image2 from '../../assets/port-image2.jpg';
+import image4 from '../../assets/port-image3.png';
+import image3 from '../../assets/port-image4.jpg';
+import image5 from '../../assets/port-image5.jpg';
+import image6 from '../../assets/port-image6.jpg';
+
+
+
+
+import './portfolio.css';
+
+const Portfolio = () => {
+  return (
+    <section id='portfolio'>
+      <h5>My Recent Projects</h5>
+      <h2>Portfolio</h2>
+
+      <div className="container portfolio__container">
+        
+        <article className='portfolio__item'>
+          <div className="portfolio__item-img">
+            <img src={image1} alt="" />
+            <h3>This is my portfolio Title</h3>
+            <div className="portfolio__item-cta">
+              <a href="https://github.com" className='btn' target={'blank'}>Github</a>
+              <a href="https://pixabay.com/images/search/" className='btn btn-primary' target={'blank'}>Preview</a>
+            </div>
+          </div>
+        </article>
+        <article className='portfolio__item'>
+          <div className="portfolio__item-img">
+            <img src={image2} alt="" />
+            <h3>This is my portfolio Title</h3>
+            <div className="portfolio__item-cta">
+              <a href="https://github.com" className='btn' target={'blank'}>Github</a>
+              <a href="https://pixabay.com/images/search/" className='btn btn-primary' target={'blank'}>Preview</a>
+            </div>
+          </div>
+        </article>
+        <article className='portfolio__item'>
+          <div className="portfolio__item-img">
+            <img src={image3} alt="" />
+            <h3>This is my portfolio Title</h3>
+            <div className="portfolio__item-cta">
+              <a href="https://github.com" className='btn' target={'blank'}>Github</a>
+              <a href="https://pixabay.com/images/search/" className='btn btn-primary' target={'blank'}>Preview</a>
+            </div>
+          </div>
+        </article>
+        <article className='portfolio__item'>
+          <div className="portfolio__item-img">
+            <img src={image4} alt="" />
+            <h3>This is my portfolio Title</h3>
+            <div className="portfolio__item-cta">
+              <a href="https://github.com" className='btn' target={'blank'}>Github</a>
+              <a href="https://pixabay.com/images/search/" className='btn btn-primary' target={'blank'}>Preview</a>
+            </div>
+          </div>
+        </article>
+        <article className='portfolio__item'>
+          <div className="portfolio__item-img">
+            <img src={image5} alt="" />
+            <h3>This is my portfolio Title</h3>
+            <div className="portfolio__item-cta">
+              <a href="https://github.com" className='btn' target={'blank'}>Github</a>
+              <a href="https://pixabay.com/images/search/" className='btn btn-primary' target={'blank'}>Preview</a>
+            </div>
+          </div>
+        </article>
+        <article className='portfolio__item'>
+          <div className="portfolio__item-img">
+            <img src={image6} alt="" />
+            <h3>This is my portfolio Title</h3>
+            <div className="portfolio__item-cta">
+              <a href="https://github.com" className='btn' target={'blank'}>Github</a>
+              <a href="https://pixabay.com/images/search/" className='btn btn-primary' target={'blank'}>Preview</a>
+            </div>
+          </div>
+        </article>
+    
+      </div>
+    </section>
+  )
+}
+
+export default Portfolio
+
+
+
+
+now lets add some stylings to portfolio...so open the /portfolio/portfolio.css and add this code to it
+
+
+
+.portfolio__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.portfolio__item {
+    background: var(--color-bg-variant);
+    padding: 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.portfolio__item:hover {
+    border-color: var(--color-primary-variant);
+    background: transparent;
+}
+
+.portfolio__item-img {
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.portfolio__item h3 {
+    margin: 1.2rem 0 2rem;
+}
+
+.portfolio__item-cta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsiveness */
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+    .portfolio__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+    
+}
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+
+   .portfolio__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+   }
+    
+}
+
+Go back to the /portfolio/Portfolio.jsx file modify it with a .map javascript function .for reference it should
+
+look like this 
+
+
+
+import React from 'react';
+import './portfolio.css';
+
+
+
+import image1 from '../../assets/port-image1.jpg';
+import image2 from '../../assets/port-image2.jpg';
+import image4 from '../../assets/port-image3.png';
+import image3 from '../../assets/port-image4.jpg';
+import image5 from '../../assets/port-image5.jpg';
+import image6 from '../../assets/port-image6.jpg';
+
+
+const data = [
+  {
+      id: 1,
+      image: image1,
+      title: 'Ssekiranda Edward portfolio images',
+      github: 'https://github.com/bantu94',
+      preview: 'https://pixabay.com/images/search/'
+  },
+  {
+      id: 2,
+      image: image2,
+      title: 'Ssekiranda Edward portfolio images',
+      github: 'https://github.com/bantu94',
+      preview: 'https://pixabay.com/images/search/'
+  },
+  {
+      id: 3,
+      image: image3,
+      title: 'Ssekiranda Edward portfolio images',
+      github: 'https://github.com/bantu94',
+      preview: 'https://pixabay.com/images/search/'
+  },
+  {
+      id: 4,
+      image: image4,
+      title: 'Ssekiranda Edward portfolio images',
+      github: 'https://github.com/bantu94',
+      preview: 'https://pixabay.com/images/search/'
+  },
+  {
+      id: 5,
+      image: image5,
+      title: 'Ssekiranda Edward portfolio images',
+      github: 'https://github.com/bantu94',
+      preview: 'https://pixabay.com/images/search/'
+  },
+  {
+      id: 6,
+      image: image6,
+      title: 'Ssekiranda Edward portfolio images',
+      github: 'https://github.com/bantu94',
+      preview: 'https://pixabay.com/images/search/'
+  },
+
+
+]
+
+
+const Portfolio = () => {
+  return (
+    <section id='portfolio'>
+      <h5>My Recent Projects</h5>
+      <h2>Portfolio</h2>
+
+      <div className="container portfolio__container">
+        {
+          
+          data.map(({id, image, title, github, preview}) => {
+            return (
+              <article key={id} className='portfolio__item'>
+              <div className="portfolio__item-img">
+                <img src={image} alt={title} />
+                <h3>{title}</h3>
+                <div className="portfolio__item-cta">
+                  <a href={github} className='btn' target={'blank'}>Github</a>
+                  <a href={preview} className='btn btn-primary' target={'blank'}>Preview</a>
+                </div>
+              </div>
+            </article>
+            )
+           
+          })
+        }
+      
+      </div>
+    </section>
+  )
+}
+
+export default Portfolio
+
+
+
+
+With all this done, everything should be working well and perfect. Now its time we worked on the section ..
+
+so open up the /testimonials/Testimonials.jsx and add this code to it.
+
+
+
+
+import React from 'react';
+import './testimonials.css';
+
+import Woman1 from '../../assets/woman1.jpg';
+import Woman2 from '../../assets/woman2.jpg';
+import Woman3 from '../../assets/woman3.jpg';
+import Woman4 from '../../assets/woman4.jpg';
+import Woman5 from '../../assets/woman5.png';
+
+
+const Testimonials = () => {
+  return (
+    <section id='testimonials'>
+      <h5>Review from clients</h5>
+      <h2>Testimonials</h2>
+      <div className="container testimonials__container">
+        <article className='testmonial'>
+          <div className="client__avatar">
+            <img src={Woman1} alt="Woman1" />
+          </div>
+          <h5 className='client__name'>Toito Matto</h5>
+          <small className='client__review'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!</small>
+        </article>
+        <article className='testmonial'>
+          <div className="client__avatar">
+            <img src={Woman2} alt="Woman2" />
+          </div>
+          <h5 className='client__name'>Toito Matto</h5>
+          <small className='client__review'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!</small>
+        </article>
+        <article className='testmonial'>
+          <div className="client__avatar">
+            <img src={Woman3} alt="Woman3" />
+          </div>
+          <h5 className='client__name'>Toito Matto</h5>
+          <small className='client__review'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!</small>
+        </article>
+        <article className='testmonial'>
+          <div className="client__avatar">
+            <img src={Woman4} alt="Woman4" />
+          </div>
+          <h5 className='client__name'>Toito Matto</h5>
+          <small className='client__review'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!</small>
+        </article>
+        <article className='testmonial'>
+          <div className="client__avatar">
+            <img src={Woman5} alt="Woman5" />
+          </div>
+          <h5 className='client__name'>Toito Matto</h5>
+          <small className='client__review'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!</small>
+        </article>
+        
+      </div>
+    </section>
+  )
+}
+
+export default Testimonials
+
+
+
+Now we should add some styling to the Testimonial section..So open the /testimonials/testimonials.css add this code
+
+
+
+
+.container.testimonials__container {
+    width: 40%;
+    padding-bottom: 4rem;
+}
+
+.client__avatar {
+    width: 4rem;
+    -webkit-aspect-ratio: 1/1;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 0.4rem solid var(--color-primary-variant);
+}
+
+.testimonial {
+    background: var(--color-bg-variant);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+.client__review {
+    color: var(--color-light);
+    font-weight: 300;
+    display: block;
+    width: 80%;
+    margin: 0.8rem auto 0;
+}
+
+
+
+span.swiper-pagination-bullet {
+    background: var(--color-primary);
+}
+
+
+/* Responsiveness */
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+    .container.testimonials__container {
+        width: 60%;
+    }
+}
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+    .container.testimonials__container {
+        width: var(--container-width-sm);
+    }  
+
+    .client__review {
+        width: var(--container-width-sm);
+    }
+}
+
+
+Lets modify The /testimonials/Testimonials.jsx file open it and add this code to it..
+
+to add simple slides to our tesmonials ,well use swiper.js .Firstly in your terminal make sure ur in da root folder
+
+issue 'npm install swiper' to get swiper installed in our application
+
+so browse to  https://swiperjs.com/react for your reference /testimonials/Testimonials.jsx file should be like this
+
+
+
+import React from 'react';
+import './testimonials.css';
+
+import Woman1 from '../../assets/woman1.jpg';
+import Woman2 from '../../assets/woman2.jpg';
+import Woman3 from '../../assets/woman3.jpg';
+import Woman4 from '../../assets/woman4.jpg';
+import Woman5 from '../../assets/woman5.png';
+
+
+// import Swiper core and required modules
+import { Pagination} from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+const data = [
+  {
+    avatar: Woman1,
+    alt: 'avatar1',
+    name: 'Toito Matto',
+    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!'
+  },
+  {
+    avatar: Woman2,
+    alt: 'avatar2',
+    name: 'Toito Matto',
+    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!'
+  },
+  {
+    avatar: Woman3,
+    alt: 'avatar3',
+    name: 'Toito Matto',
+    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!'
+  },
+  {
+    avatar: Woman4,
+    alt: 'avatar4',
+    name: 'Toito Matto',
+    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!'
+  },
+  {
+    avatar: Woman5,
+    alt: 'avatar5',
+    name: 'Toito Matto',
+    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus culpa, sed laboriosam consequuntur distinctio voluptatibus nobis mollitia aliquam dolorum repellat, itaque aut numquam? Hic illum voluptatibus dignissimos debitis sint!'
+  },
+
+
+]
+
+
+const Testimonials = () => {
+  return (
+    <section id='testimonials'>
+      <h5>Review from clients</h5>
+      <h2>Testimonials</h2>
+      <Swiper className="container testimonials__container"
+      // install Swiper modules
+      modules={[Pagination]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      >
+        
+
+        {
+          data.map(({avatar, alt, name, review}, index) => {
+            return (
+              <SwiperSlide key={index} className='testimonial'>
+                <div className="client__avatar">
+                  <img src={avatar} alt={alt} />
+                </div>
+                <h5 className='client__name'>{name}</h5>
+                <small className='client__review'>{review}</small>
+              </SwiperSlide>
+            )
+          })
+        }
+        
+      </Swiper>
+    </section>
+  )
+}
+
+export default Testimonials
+
+
+We have finished that, now let's work on next section..OPen the /contact/Contact.jsx file and add the following code to it.
+
+
+import React from 'react'
+
+import './contact.css';
+
+import { MdOutlineMarkEmailRead } from 'react-icons/md';
+import { FaInstagram } from 'react-icons/fa';
+import { ImWhatsapp } from 'react-icons/im';
+
+const Contact = () => {
+  return (
+    <section id='contact'>
+      <h5>Let's Connect</h5>
+      <h2>Contact Me</h2>
+
+      <div className="container contact__container">
+        <div className="contact__options">
+          <article className='contact__option'>
+            <MdOutlineMarkEmailRead />
+            <h4>Email</h4>
+            <h5>eddyug94@gmail.com</h5>
+            <a href="mailto:eddyug94@gmail.com" target={'blank'}>Click to message</a>
+          </article>
+          <article className='contact__option'>
+            <FaInstagram />
+            <h4>Email</h4>
+            <h5>Instagram</h5>
+            <a href="https://www.instagram.com" target={'blank'}>Let's Chat</a>
+          </article>
+          <article className='contact__option'>
+            <ImWhatsapp />
+            <h4>Email</h4>
+            <h5>Whatsapp Me</h5>
+            <a href="https://wa.me/97430087175/?text=Hi Edward, Whatsup" target={'blank'}>Click to Chat</a>
+          </article>
+        </div>
+
+        {/* *********************form************** */}
+        <form action="">
+          <input type="text" name='name' placeholder='Full Name' required />
+          <input type="email" name='email' placeholder='Your Email' required />
+          <textarea name="message" id="" cols="30" rows="10" placeholder='Your Feedback' required></textarea>
+          <button type='submit' className='btn btn-primary'>Send Message</button>
+        </form>
+      </div>
+    </section>
+  )
+}
+
+export default Contact
+
+to work with our form Firstly go to https://dashboard.emailjs.com/admin add Gmail as your email service
+
+and then Create an email template ,,save and test it and click on send message. you should see the message 
+
+in your email..
+
+After that we need to link our template to our form in the application.. 
+
+firstly install emailjs with npm install @emailjs/browser --save
+
+go to https://www.emailjs.com/docs/examples/reactjs/.. we need to import emailjs
+
+
+
+
+for reference your /contact/Contact.jsx file should look like this...
+
+
+
+import React from 'react'
+
+import './contact.css';
+
+import { MdOutlineMarkEmailRead } from 'react-icons/md';
+import { FaInstagram } from 'react-icons/fa';
+import { ImWhatsapp } from 'react-icons/im';
+
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+
+    e.preventDefault();
+
+    emailjs.sendForm('service_ia9uw2g', 'template_yj5dpy5', form.current, 'pKRTI_3CsdIyD203y')
+    e.target.reset()  
+    
+  };
+  return (
+    <section id='contact'>
+      <h5>Let's Connect</h5>
+      <h2>Contact Me</h2>
+
+      <div className="container contact__container">
+        <div className="contact__options">
+          <article className='contact__option'>
+            <MdOutlineMarkEmailRead className='contact__option-icon' />
+            <h4>Email</h4>
+            <h5>eddyug94@gmail.com</h5>
+            <a href="mailto:eddyug94@gmail.com" target={'blank'}>Click to message</a>
+          </article>
+          <article className='contact__option'>
+            <FaInstagram className='contact__option-icon' />
+            <h4>On Instagram</h4>
+            <h5>Bantu Codes</h5>
+            <a href="https://www.instagram.com" target={'blank'}>Let's Chat</a>
+          </article>
+          <article className='contact__option'>
+            <ImWhatsapp className='contact__option-icon' />
+            <h4>Whatsapp Me</h4>
+            <h5>97430087175</h5>
+            <a href="https://wa.me/97430087175/?text=Hi Edward, Whatsup" target={'blank'}>Click to Chat</a>
+          </article>
+        </div>
+
+        {/* *********************form************** */}
+        <form ref={form} onSubmit={sendEmail}>
+          <input type="text" name='name' placeholder='Full Name' required />
+          <input type="email" name='email' placeholder='Your Email' required />
+          <textarea name="message" id="" cols="30" rows="10" placeholder='Your Feedback' required></textarea>
+          <button type='submit' className='btn btn-primary'>Send Message</button>
+        </form>
+      </div>
+    </section>
+  )
+}
+
+export default Contact
+
+
+
+
+now lets add its styles Open the /contact/contact.css file and add this code
+
+
+
+.container.contact__container {
+    width: 58%;
+    display: grid;
+    grid-template-columns: 30% 58%;
+    gap: 12%;
+}
+
+.contact__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact__option {
+    background: var(--color-bg-variant);
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.contact__option:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+.contact__option-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact__option a {
+    margin-top: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+/* **********************form********************** */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary-variant);
+    resize: none;
+    color: var(--color-white);
+}
+
+
+/* Responsiveness */
+/* Media query for medium devices */
+@media screen and (max-width: 1024px) {
+    .container.contact__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+    .container.contact__container {
+        width: var(--container-width-sm);
+    }
+}
+
+
+
+Let's now work on our very last section component..OPen the /footer/Footer.jsx and add this  code to it
+
+
+
+import React from 'react';
+
+import './footer.css';
+
+import { CiFacebook } from 'react-icons/ci';
+import { BsInstagram } from 'react-icons/bs';
+import { SlSocialTwitter } from 'react-icons/sl';
+
+const Footer = () => {
+  return (
+    <footer>
+      <a href="/#" className='footer__logo'>EDWARD</a>
+
+      <ul className='footer__links'>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+
+      <div className="footer__socials">
+        <a href="https://www.facebook.com" target={'blank'}><CiFacebook /></a>
+        <a href="https://www.twitter.com" target={'blank'}><SlSocialTwitter /></a>
+        <a href="https://www.instagram.com" target={'blank'}><BsInstagram /></a>
+      </div>
+
+      <div className="footer__copyright">
+        <small>
+          &copy; Edward Projects. All rights Reserved
+        </small>
+      </div>
+
+    </footer>
+  )
+}
+
+export default Footer
+
+
+Now lets go ahead and style this open  /footer/footer.css and add this  code to it
+
+
+
+footer {
+    /* background: var(--color-primary); */
+    background: transparent;
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 7rem;
+}
+
+footer a {
+    color: var(--color-primary);
+}
+
+.footer__logo {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto 3rem;
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.footer__socials a {
+    background: var(--color-bg);
+    color: var(--color-white);
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    display: flex;
+    border: 1px solid transparent;
+}
+
+.footer__socials a:hover {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-bg);
+}
+
+
+.footer__copyright {
+    margin-bottom: 4rem;
+    color: var(--color-primary);
+}
+
+
+/* Responsiveness */
+
+
+/* Media query for small devices */
+@media screen and (max-width: 600px) {
+    .footer__links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+
+
+by now we are ready to deploy our appliction and even push it to github
+
+
