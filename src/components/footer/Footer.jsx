@@ -9,7 +9,7 @@ import { SlSocialTwitter } from 'react-icons/sl';
 const Footer = () => {
   return (
     <footer>
-      <a href="/#" className='footer__logo'>EDWARD</a>
+      <a href="/#" className='footer__logo'>Johnny Doe</a>
 
       <ul className='footer__links'>
         <li><a href="#about">About</a></li>
@@ -29,7 +29,7 @@ const Footer = () => {
 
       <div className="footer__copyright">
         <small>
-          &copy; Edward Projects. All rights Reserved
+          &copy; Johnny Projects. All rights Reserved
         </small>
       </div>
 
